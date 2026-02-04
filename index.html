@@ -13,8 +13,8 @@
       <nav>
         <a href="/texte/">Texte</a>
         <a href="/engagement/">Engagement</a>
-        <a href="/vorstoesse/">Vorstösse</a>
-        <a href="/im-ubrigen/">im übrigen</a>
+        <a href="/vorstoesse/">Vorst\u00f6sse</a>
+        <a href="/im-ubrigen/">Im \u00dcbrigen</a>
         <a href="/kontakt/">Kontakt</a>
       </nav>
     </div>
@@ -27,11 +27,20 @@
         <a class="btn" href="/engagement/">Engagement</a>
         <a class="btn secondary" href="/kontakt/">Kontakt</a>
       </div>
+      <!-- Bluesky link below buttons -->
+      <p style="margin-top: 12px;">
+        <a href="https://bsky.app/profile/mmicieli.bsky.social" target="_blank" rel="noopener">
+          <img src="/assets/00c6595a-9749-4476-9739-befb4ba2060e.png" alt="Bluesky" style="height:18px; vertical-align:middle; margin-right:4px;"/>
+          Bluesky
+        </a>
+      </p>
     </section>
+
     <footer class="site-footer">
-      <p>© <span id="y"></span> micieli.info</p>
+      <p>&copy; <span id="y"></span> micieli.info</p>
     </footer>
   </main>
+
   <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>
 </html>
