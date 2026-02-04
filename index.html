@@ -4,10 +4,57 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>micieli.info</title>
+  <link rel="stylesheet" href="/assets/style.css" />
 </head>
-<body style="font-family: system-ui; max-width: 700px; margin: 40px auto; line-height: 1.5;">
-  <h1>Hallo.</h1>
-  <p>Das ist micieli.info – kommt bald mehr.</p>
-  <p><a href="mailto:hello@micieli.info">hello@micieli.info</a></p>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="/">micieli.info</a>
+      <nav>
+        <a href="/texte/">Texte</a>
+        <a href="/engagement/">Engagement</a>
+        <a href="/vorstoesse/">Vorstösse</a>
+        <a href="/kontakt/">Kontakt & CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Matteo Micieli</h1>
+      <p class="lead">
+        Texte, Politik/Engagement, Vorstösse, Kontakt/CV.
+      </p>
+      <div class="cta">
+        <a class="btn" href="/texte/">Texte</a>
+        <a class="btn secondary" href="/kontakt/">Kontakt & CV</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <a class="card" href="/texte/">
+        <h2>Texte</h2>
+        <p>Ausgewählte Texte, Fragmente, Essays.</p>
+      </a>
+      <a class="card" href="/engagement/">
+        <h2>Engagement</h2>
+        <p>Politische Arbeit, Themen, Projekte.</p>
+      </a>
+      <a class="card" href="/vorstoesse/">
+        <h2>Vorstösse</h2>
+        <p>Automatisch aus dem Stadtratsprofil.</p>
+      </a>
+      <a class="card" href="/kontakt/">
+        <h2>Kontakt & CV</h2>
+        <p>Kontaktmöglichkeiten + CV (PDF).</p>
+      </a>
+    </section>
+
+    <footer class="site-footer">
+      <p>© <span id="y"></span> micieli.info</p>
+    </footer>
+  </main>
+
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>
 </html>
