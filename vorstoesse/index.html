@@ -22,7 +22,47 @@
 
   <main class="wrap page">
     <h1>Vorstösse</h1>
-    <p class="lead">Diese Seite ist in Arbeit.</p>
+    <p class="lead">Ausgewählte Vorstösse und Eingaben im Berner Stadtrat.</p>
+
+    <ul id="vorstoesse-list" class="list"></ul>
+
+    <p id="vorstoesse-error" style="display:none; margin-top:1rem;">
+      Konnte die Liste nicht laden.
+    </p>
   </main>
+
+  <script>
+    async function loadVorstoesse() {
+      try {
+        const res = await fetch('/vorstoesse/vorstoesse.json', { cache: 'no-store' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const items = await res.json();
+
+        // Sort newest first (by date)
+        items.sort((a,b) => (b.date || '').localeCompare(a.date || ''));
+
+        const ul = document.getElementById('vorstoesse-list');
+        ul.innerHTML = '';
+
+        for (const it of items) {
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = it.url;
+          a.target = '_blank';
+          a.rel = 'noopener';
+          a.textContent = (it.date ? it.date + ' – ' : '') + it.title;
+          li.appendChild(a);
+          ul.appendChild(li);
+        }
+
+        if (!items.length) ul.innerHTML = '<li>Noch keine Einträge.</li>';
+
+      } catch (e) {
+        document.getElementById('vorstoesse-error').style.display = 'block';
+        console.error(e);
+      }
+    }
+    loadVorstoesse();
+  </script>
 </body>
 </html>
